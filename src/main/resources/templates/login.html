@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Doctor Login Page</title>
+    <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+<h2>Doctor Login Page</h2>
+<form th:action="@{/hospital/login}" method="post">
+    <table class="table table-bordered">
+        <tbody>
+        <tr>
+            <th>Login Id</th>
+            <td><input type="text" name="name" required="required"></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td><input type="password" name="password" required="required"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Log In" class="btn btn-success">
+                <span th:text="${errMsg}"></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+<a th:href="@{/hospital/register}" class="btn btn-success">Add Doctor</a>
+
+<script type="application/javascript" src="js/jquery.js"></script>
+<script type="application/javascript" src="js/bootstrap.js"></script>
+
+</body>
+</html>

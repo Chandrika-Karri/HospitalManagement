@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Create new patient</title>
+    <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+<h2>Create new patient</h2>
+<form th:action="@{/hospital/save}" method="post">
+    <table class="table table-bordered">
+        <tbody>
+        <tr>
+            <th>Patient Name</th>
+            <td><input type="text" name="name" th:required="true" /></td>
+        </tr>
+        <tr>
+            <th>Personnel Id</th>
+            <td><input type="text" name="ssn" th:required="true" /></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="text" name="email" th:required="true" /></td>
+        </tr>
+        <tr>
+            <th>Mobile</th>
+            <td><input type="text" name="mobile" th:required="true" /></td>
+        </tr>
+        <tr>
+            <th>Doctor</th>
+            <td><input type="text" name="doctor" th:required="true" /></td>
+        </tr>
+        <tr>
+            <th>Radiograph Description</th>
+            <td><input type="text" name="radiographDesc" th:required="true" /></td>
+        </tr>
+        <tr>
+            <th>Reason to conduct</th>
+            <td><input type="text" name="reasonToConduct" th:required="true" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Add Patient" class="btn btn-success" />
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+<a th:href="@{/hospital/index}" class="btn btn-success">Back</a>
+
+<script type="application/javascript" src="js/jquery.js"></script>
+<script type="application/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>

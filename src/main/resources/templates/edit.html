@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Edit Patient</title>
+    <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+<h2>Edit Patient</h2>
+<form th:action="@{/hospital/update}" method="post">
+    <input type="hidden" name="id" th:value="${patient.id}" />
+    <table class="table table-bordered">
+        <tbody>
+        <tr>
+            <th>Patient Name</th>
+            <td><input type="text" name="name" th:required="true" th:value="${patient.name}" /></td>
+        </tr>
+        <tr>
+            <th>Personnel Id</th>
+            <td><input type="text" name="ssn" th:required="true" th:value="${patient.ssn}" /></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="text" name="email" th:required="true" th:value="${patient.email}" /></td>
+        </tr>
+        <tr>
+            <th>Mobile</th>
+            <td><input type="text" name="mobile" th:required="true" th:value="${patient.mobile}" /></td>
+        </tr>
+        <tr>
+            <th>Doctor</th>
+            <td><input type="text" name="doctor" th:required="true" th:value="${patient.doctor}" /></td>
+        </tr>
+        <tr>
+            <th>Radiograph Description</th>
+            <td><input type="text" name="radiographDesc" th:required="true" th:value="${patient.radiographDesc}" /></td>
+        </tr>
+        <tr>
+            <th>Reason to conduct</th>
+            <td><input type="text" name="reasonToConduct" th:required="true" th:value="${patient.reasonToConduct}" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Update" class="btn btn-success" />
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+<a th:href="@{/hospital/index}" class="btn btn-success">Back</a>
+
+<script type="application/javascript" src="js/jquery.js"></script>
+<script type="application/javascript" src="js/bootstrap.js"></script>
+
+</body>
+</html>

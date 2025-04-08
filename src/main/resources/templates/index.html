@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>List of all patients</title>
+    <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+<h2>List of all patients</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>S.No</th>
+        <th>Patient Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Doctor</th>
+        <th>Radiograph Description</th>
+        <th>Reason</th>
+        <th>Action</th>
+    </tr>
+    <tbody>
+    <tr th:each="patient, iterStat : ${patients}">
+        <td th:text="${iterStat.index + 1}"></td>
+        <td th:text="${patient.name}"></td>
+        <td th:text="${patient.email}"></td>
+        <td th:text="${patient.mobile}"></td>
+        <td th:text="${patient.doctor}"></td>
+        <td th:text="${patient.radiographDesc}"></td>
+        <td th:text="${patient.reasonToConduct}"></td>
+        <td><a th:href="@{/hospital/edit/{id}(id=${patient.id})}" class="btn btn-warning">Edit</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/hospital/create}" class="btn btn-success">Add Patient Details</a>
+
+<script type="application/javascript" src="js/jquery.js"></script>
+<script type="application/javascript" src="js/bootstrap.js"></script>
+
+</body>
+</html>
