@@ -1,14 +1,9 @@
 version: 0.2
 
-env:
-    variables:
-      ENV_VAR_NAME: "value"
-
-
 phases:
   install:
     runtime-versions:
-      java: openjdk17
+      java: corretto21
   build:
     commands:
       - echo Build completed on `date`
