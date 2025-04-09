@@ -75,6 +75,13 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+        <id>production</id>
+        <properties>
+            <activatedProperties>production</activatedProperties>
+        </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -87,6 +94,14 @@
                             <artifactId>lombok</artifactId>
                         </path>
                     </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <debug>false</debug>
+                    <optimize>true</optimize>
                 </configuration>
             </plugin>
             <plugin>
@@ -103,5 +118,6 @@
             </plugin>
         </plugins>
     </build>
-
+        </profile>
+    </profiles>
 </project>
