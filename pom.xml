@@ -81,7 +81,8 @@
         <properties>
             <activatedProperties>production</activatedProperties>
         </properties>
-
+        </profile>
+    </profiles>
     <build>
         <plugins>
             <plugin>
@@ -118,6 +119,5 @@
             </plugin>
         </plugins>
     </build>
-        </profile>
-    </profiles>
+
 </project>
