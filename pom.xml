@@ -78,6 +78,9 @@
     <profiles>
         <profile>
         <id>production</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
         <properties>
             <activatedProperties>production</activatedProperties>
         </properties>
